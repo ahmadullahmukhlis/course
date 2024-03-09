@@ -7,7 +7,7 @@
                 <div class="shrink-0 flex items-center">
                     <h1>
                         <a href="{{ route('dashboard') }}">
-                            <h1>Course Application</h1>
+                            <h1 class="fs-4">Course Application</h1>
                         </a>
                     </h1>
                 </div>

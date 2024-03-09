@@ -495,7 +495,8 @@
     </div>
     <script>
         $(document).ready(function() {
-            alert()
-        })
+            alert("Document is ready!");
+        });
     </script>
+
 </x-app-layout>

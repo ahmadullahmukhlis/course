@@ -2,7 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight d-flex justify-content-between">
             <span>student</span>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">add</button>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#student_modal">add</button>
         </h2>
 
     </x-slot>
@@ -34,11 +34,11 @@
 
 
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal fade" id="student_modal" tabindex="-1" aria-labelledby="student_modalLabel" aria-hidden="false">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add new student</h1>
+                    <h1 class="modal-title fs-5" id="student_modalLabel">Add new student</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form id="student_form">
@@ -102,8 +102,7 @@
                         }
                     })
                     .then(function(response) {
-                        department.reloadData();
-                        $('#add_unit').modal('hide');
+                        $('#student_modal').modal('hide');
                         toastr.success('The record has been saved successfully');
                         $('#unit_form')[0].reset();
                     })

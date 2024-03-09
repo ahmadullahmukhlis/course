@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\ExamController;
+use App\Http\Controllers\FeeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
+use App\Models\subject;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +31,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('subjects', SubjectController::class);
+    Route::resource('fees', FeeController::class);
+    Route::resource('students', StudentController::class);
+    Route::resource('exams', ExamController::class);
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

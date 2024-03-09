@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dataTables.dataTables.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/datatables.css') }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
@@ -40,7 +41,7 @@
 </body>
 <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
 <script src="{{ asset('js/dataTables.jqueryui.min.js') }}"></script>
-<script src="{{ asset('js/dataTables.js') }}"></script>
+<script src="{{ asset('js/datatables.js') }}"></script>
 
 
 </html>

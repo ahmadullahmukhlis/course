@@ -493,10 +493,6 @@
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function() {
-            alert("Document is ready!");
-        });
-    </script>
+
 
 </x-app-layout>

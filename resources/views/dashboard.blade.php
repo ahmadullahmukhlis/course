@@ -11,21 +11,66 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <div class="table-responsive">
-                        <table class="table table-dark table-hover" id="student">
-                            <thead class="">
-                                <th>#</th>
-                                <th>name</th>
-                                <th>father name</th>
-                                <th>grand father name</th>
-                                <th>address</th>
-                                <th>phone</th>
-                                <th>action</th>
-                            </thead>
-                            <tbody>
+                    <div class="row">
 
-                            </tbody>
-                        </table>
+                        <div class="col-3 p-3">
+                            <div class="card text-center bg-primary">
+                                <div class="card title">
+                                    students
+                                </div>
+                                <div class="card-body">
+                                    23
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-3 p-3">
+                            <div class="card text-center bg-primary">
+                                <div class="card title">
+                                    students fees
+                                </div>
+                                <div class="card-body">
+                                    23
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-3 p-3">
+                            <div class="card text-center bg-primary">
+                                <div class="card title">
+                                    subjects
+                                </div>
+                                <div class="card-body">
+                                    23
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-3 p-3">
+                            <div class="card text-center bg-primary">
+                                <div class="card title">
+                                    paid students
+                                </div>
+                                <div class="card-body">
+                                    23
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-3 p-3">
+                            <div class="card text-center bg-primary">
+                                <div class="card title">
+                                    not paid students
+                                </div>
+                                <div class="card-body">
+                                    23
+                                </div>
+                            </div>
+                        </div>
+
+
+
                     </div>
                 </div>
             </div>

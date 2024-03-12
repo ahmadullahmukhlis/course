@@ -1,3 +1,4 @@
+@use('App\Models\subject', 'subject')
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight d-flex justify-content-between">
@@ -88,10 +89,10 @@
                                         <label for="address" class="form-label">subject</label>
                                         <select class="form-select " @error('subject_id') is-invalid @enderror
                                             aria-label="SUBJECT" name="subject_id">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <option selected>select subject</option>
+                                            @foreach (subject::get() as $item)
+                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                            @endforeach
                                         </select>
                                         @error('subject_id')
                                             <span class="invalid-feedback"

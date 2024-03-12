@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class fee extends Model
 {
     use HasFactory;
+    public function subject()
+    {
+        return $this->belongsTo(subject::class);
+    }
+    public function student()
+    {
+        return $this->belongsTo(student::class);
+    }
 }

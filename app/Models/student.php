@@ -15,4 +15,16 @@ class student extends Model
         'phone',
         'address'
     ];
+    public function subject()
+    {
+        return $this->belongsToMany(subject::class);
+    }
+    public function fees()
+    {
+        return $this->hasMany(fee::class);
+    }
+    public function exam()
+    {
+        return $this->hasMany(exam::class);
+    }
 }

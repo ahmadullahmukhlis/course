@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/dataTables.dataTables.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/datatables.css') }}">
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->

@@ -103,14 +103,18 @@
                     })
                     .then(function(response) {
                         $('#student_modal').modal('hide');
-                        toastr.success('The record has been saved successfully');
+                        // Refresh the current page
+                        alert("the record has been saved ");
+                        location.reload(true);
                         $('#unit_form')[0].reset();
+
                     })
                     .catch(function(error) {
                         if (error.response && error.response.status === 422) {
                             // Clear previous errors
                             $('.is-invalid').removeClass('is-invalid');
                             $('.invalid-feedback').remove();
+
 
                             // Get the errors from response
                             var errors = error.response.data.errors;

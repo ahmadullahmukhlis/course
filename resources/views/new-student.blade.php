@@ -11,43 +11,92 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <form action="{{ route('students.store') }}">
+                    <form action="{{ route('students.store') }}" method="POST">
                         @csrf
                         <div class="modal-body">
                             <div class="row">
+                                <!-- Name Field -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="name" class="form-label">name</label>
-                                        <input type="text" class="form-control" id="name" name="name"
-                                            placeholder="Ex:mukhlis">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                            id="name" name="name" placeholder="Ex: Mukhlis">
+                                        @error('name')
+                                            <span class="invalid-feedback"
+                                                role="alert"><strong>{{ $message }}</strong></span>
+                                        @enderror
                                     </div>
                                 </div>
+
+                                <!-- Father Name Field -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="father_name" class="form-label">father name</label>
-                                        <input type="text" class="form-control" id="father_name" father
-                                            name="father_name" placeholder="Ex:mukhlis">
+                                        <label for="father_name" class="form-label">Father Name</label>
+                                        <input type="text"
+                                            class="form-control @error('father_name') is-invalid @enderror"
+                                            id="father_name" name="father_name" placeholder="Ex: Mukhlis">
+                                        @error('father_name')
+                                            <span class="invalid-feedback"
+                                                role="alert"><strong>{{ $message }}</strong></span>
+                                        @enderror
                                     </div>
                                 </div>
+
+                                <!-- Grand Father Name Field -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="g_father_name" class="form-label">grand father name</label>
-                                        <input type="text" class="form-control" id="g_father_name" father
-                                            name="g_father_name" placeholder="Ex:mukhlis">
+                                        <label for="g_father_name" class="form-label">Grand Father Name</label>
+                                        <input type="text"
+                                            class="form-control @error('g_father_name') is-invalid @enderror"
+                                            id="g_father_name" name="g_father_name" placeholder="Ex: Mukhlis">
+                                        @error('g_father_name')
+                                            <span class="invalid-feedback"
+                                                role="alert"><strong>{{ $message }}</strong></span>
+                                        @enderror
                                     </div>
                                 </div>
+
+                                <!-- Phone Field -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="phone" class="form-label">phone</label>
-                                        <input type="text" class="form-control" id="phone" father name="phone"
-                                            placeholder="Ex:0779404681">
+                                        <label for="phone" class="form-label">Phone</label>
+                                        <input type="text" class="form-control @error('phone') is-invalid @enderror"
+                                            id="phone" name="phone" placeholder="Ex: 0779404681">
+                                        @error('phone')
+                                            <span class="invalid-feedback"
+                                                role="alert"><strong>{{ $message }}</strong></span>
+                                        @enderror
                                     </div>
                                 </div>
+
+                                <!-- Address Field -->
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="address" class="form-label">address</label>
-                                        <input type="text" class="form-control" id="address" father name="address"
-                                            placeholder="Ex: kabul afghanistan ">
+                                        <label for="address" class="form-label">Address</label>
+                                        <input type="text"
+                                            class="form-control @error('address') is-invalid @enderror" id="address"
+                                            name="address" placeholder="Ex: Kabul, Afghanistan">
+                                        @error('address')
+                                            <span class="invalid-feedback"
+                                                role="alert"><strong>{{ $message }}</strong></span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <!-- Address Field -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="address" class="form-label">subject</label>
+                                        <select class="form-select " @error('subject_id') is-invalid @enderror
+                                            aria-label="SUBJECT" name="subject_id">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        @error('subject_id')
+                                            <span class="invalid-feedback"
+                                                role="alert"><strong>{{ $message }}</strong></span>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -57,6 +106,7 @@
                             <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

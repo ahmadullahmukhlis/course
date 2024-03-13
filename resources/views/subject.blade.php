@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight d-flex justify-content-between">
-            <span>students</span>
-            <a href="{{ route('subjects.create') }}"class="btn btn-primary">create new student</a>
+            <span>subject</span>
+            <a href="{{ route('subjects.create') }}"class="btn btn-primary">create new subject</a>
         </h2>
 
     </x-slot>

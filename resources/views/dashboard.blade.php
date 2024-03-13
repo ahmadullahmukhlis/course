@@ -13,17 +13,20 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="row">
-
                         <div class="col-3 p-3 ">
-                            <div class="card text-center bg-yellow-400">
-                                <div class="card title">
-                                    students
+                            <a href="{{ route('students.index') }}">
+                                <div class="card text-center bg-yellow-400">
+                                    <div class="card title">
+                                        students
+                                    </div>
+                                    <div class="card-body">
+                                        {{ student::count() }}
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    {{ student::count() }}
-                                </div>
-                            </div>
+                            </a>
                         </div>
+
+
 
                         <div class="col-3 p-3">
                             <div class="card text-center bg-primary">

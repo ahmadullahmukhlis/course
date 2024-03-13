@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\student;
 use App\Http\Requests\StorestudentRequest;
 use App\Http\Requests\UpdatestudentRequest;
-
+use Illuminate\Contracts\View\View;
+use PhpParser\Node\Stmt\Return_;
 
 class StudentController extends Controller
 {
@@ -58,7 +59,7 @@ class StudentController extends Controller
      */
     public function edit(student $student)
     {
-        //
+        return view('edit-student', compact('student'));
     }
 
     /**

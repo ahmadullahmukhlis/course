@@ -20,7 +20,10 @@
                                 <th>grand father name</th>
                                 <th>address</th>
                                 <th>phone</th>
-                                <th>action</th>
+                                <th>edit</th>
+                                <th>delete</th>
+                                <th>profile</th>
+
                             </thead>
                             <tbody>
                                 @foreach ($students as $item)
@@ -31,6 +34,8 @@
                                         <td>{{ $item->g_f_name }}</td>
                                         <td>{{ $item->address }}</td>
                                         <td>{{ $item->phone }}</td>
+                                        <td class="btn btn-warning"><a
+                                                href="{{ route('students.edit', $item->id) }}">edit</a></td>
 
                                     </tr>
                                 @endforeach

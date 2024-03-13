@@ -20,9 +20,8 @@
                                 <th>grand father name</th>
                                 <th>address</th>
                                 <th>phone</th>
-                                <th>edit</th>
-                                <th>delete</th>
-                                <th>profile</th>
+                                <th>action</th>
+
 
                             </thead>
                             <tbody>
@@ -36,6 +35,10 @@
                                         <td>{{ $item->phone }}</td>
                                         <td class="btn btn-warning"><a
                                                 href="{{ route('students.edit', $item->id) }}">edit</a></td>
+                                        <td class="btn btn-warning"><a
+                                                href="{{ route('students.destroy', $item->id) }}">delete</a></td>
+                                        <td class="btn btn-warning"><a
+                                                href="{{ route('students.show', $item->id) }}">profile</a></td>
 
                                     </tr>
                                 @endforeach

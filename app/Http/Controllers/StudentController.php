@@ -51,7 +51,7 @@ class StudentController extends Controller
      */
     public function show(student $student)
     {
-        //
+        return view('view-student', compact('student'));
     }
 
     /**
@@ -67,7 +67,14 @@ class StudentController extends Controller
      */
     public function update(UpdatestudentRequest $request, student $student)
     {
-        //
+        $student->update([
+            'full_name' => $request->name,
+            'father_name' => $request->father_name,
+            'g_f_name' => $request->g_father_name,
+            'phone' => $request->phone,
+            'address' => $request->address
+        ]);
+        return redirect()->route('students.index')->with('message', 'the data has been update ');
     }
 
     /**
@@ -75,6 +82,7 @@ class StudentController extends Controller
      */
     public function destroy(student $student)
     {
-        //
+        $student->delete();
+        return redirect()->route('students.index')->with('message', 'the data has been delete ');
     }
 }

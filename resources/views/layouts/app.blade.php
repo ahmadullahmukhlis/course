@@ -32,6 +32,12 @@
 
         <!-- Page Content -->
         <main>
+
+            @if (session('message'))
+                <div class="alert text-center alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
             {{ $slot }}
         </main>
     </div>

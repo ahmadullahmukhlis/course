@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight d-flex justify-content-between">
-            <span>create student</span>
+            <span>create subject</span>
 
         </h2>
 
@@ -12,7 +12,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <form action="{{ route('students.store') }}" method="POST">
+                    <form action="{{ route('subjects.store') }}" method="POST">
                         @csrf
                         <div class="modal-body">
                             <div class="row">
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary bg-purple-600">Save</button>
+                            <button type="submit" class="btn btn-primary border-t-indigo-800">Save</button>
                         </div>
                     </form>
 

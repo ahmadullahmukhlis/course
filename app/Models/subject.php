@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class subject extends Model
 {
+    protected  $fillable = [
+        'name'
+    ];
     use HasFactory;
     public function student()
     {

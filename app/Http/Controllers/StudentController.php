@@ -39,10 +39,10 @@ class StudentController extends Controller
             'phone' => $request->phone,
             'address' => $request->address
         ]);
-        $student->subject()->create([
+        $student->subject()->attach([
             'subject_id' => $request->subject_id
         ]);
-        return response()->json(200);
+        return redirect()->route('students.index')->with('message', 'the data has been saved ');
     }
 
     /**

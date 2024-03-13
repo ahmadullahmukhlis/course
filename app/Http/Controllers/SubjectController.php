@@ -13,7 +13,8 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        //
+        $subjects = subject::all();
+        return view('subject', compact('subjects'));
     }
 
     /**
@@ -21,7 +22,7 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('new-subject');
     }
 
     /**
@@ -29,7 +30,10 @@ class SubjectController extends Controller
      */
     public function store(StoresubjectRequest $request)
     {
-        //
+        subject::create([
+            'name' => $request->name
+        ]);
+        return redirect()->route('subjects.index')->with('message', 'the data has been saved ');
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\fee;
 use App\Http\Requests\StorefeeRequest;
 use App\Http\Requests\UpdatefeeRequest;
+use App\Models\student;
 
 class FeeController extends Controller
 {
@@ -13,7 +14,8 @@ class FeeController extends Controller
      */
     public function index()
     {
-        //
+        $fees = student::whereHas('fees')->get();
+        return view('fees', compact('fees'));
     }
 
     /**

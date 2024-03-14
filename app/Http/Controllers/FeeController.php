@@ -43,7 +43,13 @@ class FeeController extends Controller
      */
     public function store(StorefeeRequest $request)
     {
-        //
+        fee::create([
+            'student_id' => $request->id,
+            'amount' => $request->amount,
+            'subject_id' => $request->subject_id,
+            'payment_date' => $request->date
+        ]);
+        return redirect()->route('fees.index')->with('messagte', 'the fees has been added ');
     }
 
     /**

@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class fee extends Model
 {
+    protected $fillable = [
+        'amount', 'payment_date', 'subject_id', 'student_id',
+    ];
     use HasFactory;
     public function subject()
     {

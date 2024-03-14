@@ -6,6 +6,7 @@ use App\Models\fee;
 use App\Http\Requests\StorefeeRequest;
 use App\Http\Requests\UpdatefeeRequest;
 use App\Models\student;
+use Carbon\Carbon;
 
 class FeeController extends Controller
 {
@@ -14,7 +15,13 @@ class FeeController extends Controller
      */
     public function index()
     {
-        $fees = student::whereHas('fees')->get();
+        $currentMonth = Carbon::now()->month;
+        $currentYear = Carbon::now()->year;
+        $fees = Student::whereHas('fees', function ($query) use ($currentMonth, $currentYear) {
+            $query->whereMonth('payment_date', '=', $currentMonth)
+                ->whereYear('payment_date', '=', $currentYear);
+        })->get();
+
         return view('fees', compact('fees'));
     }
 

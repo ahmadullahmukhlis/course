@@ -71,7 +71,8 @@
                                         <td>{{ $item->address }}</td>
                                         <td>{{ $item->phone }}</td>
                                         <td class="btn btn-warning"><a
-                                                href="{{ route('students.edit', $item->id) }}">edit</a></td>
+                                                href="{{ route('fees.create', ['id' => $item->id]) }}">add
+                                                fees</a></td>
                                         <td class="btn btn-warning"><a
                                                 href="{{ route('students.destroy', $item->id) }}">delete</a></td>
                                         <td class="btn btn-warning"><a

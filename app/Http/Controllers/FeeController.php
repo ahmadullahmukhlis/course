@@ -34,7 +34,8 @@ class FeeController extends Controller
      */
     public function create()
     {
-        //
+        $id = request('id');
+        return view('add_fees', compact('id'));
     }
 
     /**

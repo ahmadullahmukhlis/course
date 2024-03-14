@@ -47,6 +47,42 @@
                         </table>
                     </div>
                 </div>
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover" id="student">
+                            <thead class="">
+                                <th>#</th>
+                                <th>name</th>
+                                <th>father name</th>
+                                <th>grand father name</th>
+                                <th>address</th>
+                                <th>phone</th>
+                                <th>action</th>
+
+
+                            </thead>
+                            <tbody>
+                                @foreach ($students as $item)
+                                    <tr>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->full_name }}</td>
+                                        <td>{{ $item->father_name }}</td>
+                                        <td>{{ $item->g_f_name }}</td>
+                                        <td>{{ $item->address }}</td>
+                                        <td>{{ $item->phone }}</td>
+                                        <td class="btn btn-warning"><a
+                                                href="{{ route('students.edit', $item->id) }}">edit</a></td>
+                                        <td class="btn btn-warning"><a
+                                                href="{{ route('students.destroy', $item->id) }}">delete</a></td>
+                                        <td class="btn btn-warning"><a
+                                                href="{{ route('students.show', $item->id) }}">profile</a></td>
+
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

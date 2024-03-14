@@ -17,12 +17,16 @@ class FeeController extends Controller
     {
         $currentMonth = Carbon::now()->month;
         $currentYear = Carbon::now()->year;
-        $fees = Student::whereHas('fees', function ($query) use ($currentMonth, $currentYear) {
+        $fees = student::whereHas('fees', function ($query) use ($currentMonth, $currentYear) {
             $query->whereMonth('payment_date', '=', $currentMonth)
                 ->whereYear('payment_date', '=', $currentYear);
         })->get();
 
-        return view('fees', compact('fees'));
+        $students = student::whereDoesntHave('fees', function ($query) use ($currentMonth, $currentYear) {
+            $query->whereMonth('payment_date', '=', $currentMonth)
+                ->whereYear('payment_date', '=', $currentYear);
+        })->get();
+        return view('fees', compact('fees', 'students'));
     }
 
     /**
